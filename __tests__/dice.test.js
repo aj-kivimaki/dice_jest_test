@@ -49,7 +49,7 @@ describe("test the exceptions", () => {
   });
 });
 
-describe("Test the roll - 'roll()'", () => {
+describe("test the roll", () => {
   test("create dice with no upper bound", () => {
     const dice = new Dice();
     dice.roll();
@@ -65,7 +65,7 @@ describe("Test the roll - 'roll()'", () => {
   });
 });
 
-describe("Test to String - 'toString()'", () => {
+describe("test to String", () => {
   let dice;
 
   beforeEach(() => {
