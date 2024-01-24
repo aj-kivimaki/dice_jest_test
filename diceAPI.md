@@ -12,13 +12,12 @@ If the dice has not been rolled, the number of dots is 0. After the dice has bee
 - if no upper bound is given, the default will be 6
 - initializes the dot count to 0
 
-- if upper bound is not a number and not an integer, throw an exception
-
-`'upper bound must be an integer'`
+- if upper bound is not a number and not an integer, throw an exception `'upper bound must be an integer'`
+  Note: '1' is not casted to number, so an exception is thrown
 
 - if upper bound is not between 2 and 20, throw an exception
   - upper bound is greater than 20: `'upper bound is too big'`
-  - upper bound is less than 2: `'upper bpund is too small'`
+  - upper bound is less than 2: `'upper bound is too small'`
 
 ### methods
 
