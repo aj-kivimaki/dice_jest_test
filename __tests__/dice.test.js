@@ -81,3 +81,37 @@ describe("test to String", () => {
     expect(dice.toString()).toBe("Not rolled yet");
   });
 });
+
+describe("Test roll with distribution test", () => {
+  describe("create dice with no upper bound given", () => {
+    const dice = new Dice();
+    const dotCounts = [];
+    for (let i = 0; i < 10; i++) {
+      test("when rolled", () => {
+        dice.roll();
+        expect(dice.dots).toBeGreaterThanOrEqual(1);
+        expect(dice.dots).toBeLessThanOrEqual(6);
+      });
+    }
+    test("dot distribution ok", () => {
+      for (let i = 0; i < 100; i++) {
+        dice.roll();
+        dotCounts.push(dice.dots);
+      }
+      expect(new Set(dotCounts).size === 6).toBe(true);
+    });
+  });
+
+  describe("create dice with upper bound 20", () => {
+    const dice = new Dice(20);
+    const dotCounts = [];
+
+    test("dot distribution ok", () => {
+      for (let i = 0; i < 500; i++) {
+        dice.roll();
+        dotCounts.push(dice.dots);
+      }
+      expect(new Set(dotCounts).size === 20).toBe(true);
+    });
+  });
+});
